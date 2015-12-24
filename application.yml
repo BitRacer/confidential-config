@@ -1,7 +1,7 @@
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://eureka.classified.cfapps.io/eureka/           
+      defaultZone: ${vcap.services.discovery.credentials.uri:http://127.0.0.1:8761}/eureka/     
   instance:
     leaseRenewalIntervalInSeconds: 10
     metadataMap:
@@ -10,8 +10,6 @@ eureka:
 logging:
   level:
     org.springframework.cloud: DEBUG
-logging:
-  level:
     com.confidential.platform: DEBUG
     org.springframework.web: DEBUG
 
